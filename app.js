@@ -21,4 +21,13 @@ function agregarAmigo(){
             elementoHTML.appendChild(elementoLista);
         }
     }
-    
+    function sortearAmigo(){
+        if (amigos.length === 0){
+            alert("La lista de amigos esta vacía")
+            return;
+        }
+        indiceRandom = Math.floor(Math.random()*amigos.length);
+        nombreSorteado = amigos[indiceRandom];
+        let sortearNombre = document.getElementById("resultado");
+        sortearNombre.innerHTML = nombreSorteado;
+    }
