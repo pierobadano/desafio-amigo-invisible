@@ -2,6 +2,9 @@
 //  Aquí deberás desarrollar la lógica para resolver el problema.
 
 let amigos = [];
+function limpiarTexto(){
+    document.getElementById("amigo").value = "";
+}
 function agregarAmigo(){
     let nombreAmigo = document.getElementById("amigo"); 
     if (nombreAmigo.value === ""){
@@ -9,8 +12,9 @@ function agregarAmigo(){
         return;
     }
     amigos.push(nombreAmigo.value);
-    nombreAmigo.value= "";
-    actualizarLista()
+    limpiarTexto();
+    actualizarLista();
+    return;
 }
     function actualizarLista(){
         let elementoHTML = document.querySelector("ul");
