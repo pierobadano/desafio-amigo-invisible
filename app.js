@@ -16,22 +16,22 @@ function agregarAmigo(){
     actualizarLista();
     return;
 }
-    function actualizarLista(){
-        let elementoHTML = document.querySelector("ul");
-        elementoHTML.innerHTML = "";
-        for (let i=0; i < amigos.length; i++){
-            elementoLista= document.createElement("li");
-            elementoLista.innerHTML = amigos[i];
-            elementoHTML.appendChild(elementoLista);
-        }
+function actualizarLista(){ 
+    let elementoHTML = document.querySelector("ul");
+    elementoHTML.innerHTML = "";
+    for (let i=0; i < amigos.length; i++){      
+        elementoLista= document.createElement("li");
+        elementoLista.innerHTML = amigos[i];
+        elementoHTML.appendChild(elementoLista);
     }
-    function sortearAmigo(){
-        if (amigos.length === 0){
-            alert("La lista de amigos esta vacía")
-            return;
-        }
-        indiceRandom = Math.floor(Math.random()*amigos.length);
-        nombreSorteado = amigos[indiceRandom];
-        let sortearNombre = document.getElementById("resultado");
-        sortearNombre.innerHTML = nombreSorteado;
+}
+function sortearAmigo(){
+    if (amigos.length === 0){               //verificacion si la lista contiene elementos
+        alert("La lista de amigos esta vacía")
+        return;
     }
+    indiceRandom = Math.floor(Math.random()*amigos.length); //obtengo un indice random entre 0 y el largo del array (cantidad de amigos)
+    nombreSorteado = amigos[indiceRandom]; //almaceno el nombre en base al indice sorteado
+    let sortearNombre = document.getElementById("resultado");  //Lo muestro en pantalla en el espacio asignado para el resultado
+    sortearNombre.innerHTML = nombreSorteado;
+}
